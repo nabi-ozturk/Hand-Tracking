@@ -2,9 +2,9 @@ import cv2
 import time
 import mediapipe as mp
 
-# cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)
 
-cap = cv2.VideoCapture("waving_hand.mp4")
+# cap = cv2.VideoCapture("waving_hand.mp4")
 
 mpHand = mp.solutions.hands
 
@@ -17,8 +17,8 @@ cTime = 0
 
 while True:
     success, img = cap.read()
-    if not success:
-        break
+     #if not success:
+         #break
     
     imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     
@@ -50,10 +50,8 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-cap.release()
-cv2.destroyAllWindows()
-
-
+# cap.release()
+# cv2.destroyAllWindows()
 
 
 
